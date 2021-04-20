@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react'
-import File from './file';
+import File from './Form';
 
 const initialFileValues = {
   username: '',
@@ -10,6 +10,23 @@ const initialFileValues = {
 }
 
 const [files, setFiles] = useState([])
+
+const [fileValues, setFileValues] = useState(initialFileValues)
+
+const updateForm = (inputName, inputValue) => {
+  setFormValues({...formValues, [inputName]: inputValue})
+}
+
+const submitForm = () => {
+  const newFriend = {
+    username: formValues.username.trim(),
+    email: formValues.email.trim(),
+    role: formValues.role,
+  }
+
+  if(!newFriend.username || !newFriend || !newFriend.role) return
+  console.log(newFriend);
+}
 function App() {
   return (
     <div className="App">
