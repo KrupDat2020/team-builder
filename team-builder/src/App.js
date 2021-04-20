@@ -1,7 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from 'react'
+import File from './file';
 
+const initialFileValues = {
+  username: '',
+  email: '',
+  role: '',
+}
+
+const [files, setFiles] = useState([])
 function App() {
   return (
     <div className="App">
